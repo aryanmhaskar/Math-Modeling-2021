@@ -13,11 +13,15 @@ from keras.layers import ConvLSTM2D
 
 #declare model in seq framerork
 model = Sequential()
-model.add(LSTM(50, input_shape=(None, sequence_size)))
-model.add(Dense(50, activation="sigmoid"))
-model.add(Dense(25, activation="sigmoid"))
-model.add(Dense(5, activation="sigmoid"))
-model.add(Dense(1, activation="sigmoid"))
+model.add(LSTM(100, input_shape=(None, seq_size)))
+model.add(Dense(500))
+model.add(Dense(250))
+model.add(Dense(100))
+model.add(Dense(50))
+model.add(Dense(25))
+model.add(Dense(5))
+model.add(Dense(1))
+model.compile(loss='mean_squared_error', optimizer='adam')
 
 model.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.Adam(learning_rate=0.1, beta_1=0.)), verbose=1, mode='auto', restore_best_weights=True)
 model.summary()
