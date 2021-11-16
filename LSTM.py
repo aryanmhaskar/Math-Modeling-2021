@@ -21,7 +21,6 @@ model.add(Dense(50))
 model.add(Dense(25))
 model.add(Dense(5))
 model.add(Dense(1))
-model.compile(loss='mean_squared_error', optimizer='adam')
 
 model.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.Adam(learning_rate=0.1, beta_1=0.)), verbose=1, mode='auto', restore_best_weights=True)
 model.summary()
